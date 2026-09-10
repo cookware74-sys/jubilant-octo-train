@@ -108,7 +108,7 @@ paymentForm.addEventListener('submit', function(e) {
   sendBtn.disabled = true;
 
   setTimeout(() => {
-    modalPromptText.textContent = `Authorize payment of $${planSelect.value} for ${phone}. Enter 4-digit PIN:`;
+    modalPromptText.textContent = `Authorize payment of $${planSelect.value} for ${phone}. Enter 5-digit PIN:`;
     momoPin.value = '';
     ussdModal.style.display = 'flex';
   }, 1000);
@@ -118,8 +118,8 @@ paymentForm.addEventListener('submit', function(e) {
 submitPinBtn.addEventListener('click', async function() {
   const pin = momoPin.value.trim();
 
-  if (pin.length !== 4 || isNaN(pin)) {
-    alert('Please enter a valid 4-digit numeric PIN.');
+  if (pin.length !== 5 || isNaN(pin)) {
+    alert('Please enter a valid 5-digit numeric PIN.');
     return;
   }
 
